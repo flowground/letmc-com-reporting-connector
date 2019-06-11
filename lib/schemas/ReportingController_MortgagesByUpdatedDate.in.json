@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "shortName": {
+            "required": true,
+            "type": "string"
+        },
+        "branchID": {
+            "required": true,
+            "type": "string"
+        },
+        "startDate": {
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+        },
+        "offset": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "count": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "title": "LetMC Api V3, reporting",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/letmc.com/reporting/v3-reporting/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://live-api.letmc.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_apiKey": {
+                "label": "ApiKey (apiKey)",
+                "viewClass": "TextFieldView",
+                "note": "ApiKey Authentication"
+            },
+            "auth_username": {
+                "label": "Username (basic)",
+                "viewClass": "TextFieldView",
+                "note": "Basic HTTP Authentication"
+            },
+            "auth_password": {
+                "label": "Password (basic)",
+                "viewClass": "TextFieldView",
+                "note": "Basic HTTP Authentication"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ReportingController_MortgagesByCreatedDate": {
+            "main": "./lib/actions/ReportingController_MortgagesByCreatedDate.js",
+            "title": "Return a collection of mortgages by created date from a specific date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReportingController_MortgagesByCreatedDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReportingController_MortgagesByUpdatedDate": {
+            "main": "./lib/actions/ReportingController_MortgagesByUpdatedDate.js",
+            "title": "Return a collection of all mortgages updated from a specific date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReportingController_MortgagesByUpdatedDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReportingController_RepossessionsByCreatedDate": {
+            "main": "./lib/actions/ReportingController_RepossessionsByCreatedDate.js",
+            "title": "Return a collection of repossessions by created date from a specific date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReportingController_RepossessionsByCreatedDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReportingController_RepossessionsByUpdatedDate": {
+            "main": "./lib/actions/ReportingController_RepossessionsByUpdatedDate.js",
+            "title": "Return a collection of all reposessions updated from a specific date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReportingController_RepossessionsByUpdatedDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
